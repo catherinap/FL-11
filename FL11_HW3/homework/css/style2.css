@@ -154,6 +154,7 @@ p {
   font-size: 20px;
   line-height: 1.5;
 }
+
 .section_banner {
   width: 1200px;
   margin: 0 auto;
@@ -166,7 +167,7 @@ p {
   position: absolute;
   z-index: 11;
   bottom: -51%;
-  left: 18%;
+  left: 20%;
 }
 .section_banner .section_banner_text_wrap {
   font-family: "Source Sans Pro", sans-serif;
@@ -232,3 +233,4 @@ p {
 .footer .footer-wrap .footer-cr, .footer .footer-wrap .footer_logo p, .footer .footer-wrap .footer_text {
   opacity: 0.7;
 }
+

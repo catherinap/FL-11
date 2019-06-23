@@ -2,11 +2,11 @@ body {
   margin: 0;
   background-color: white;
   color: #2C2F3C;
+  font-family: "Source Sans Pro", sans-serif;
 }
 body * {
   box-sizing: border-box;
 }
-
 p {
   margin: 0;
 }
@@ -21,7 +21,7 @@ p {
   margin-bottom: 70px;
 }
 .logo p, .header .landing-logo p, .footer .footer-wrap .footer_logo p {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   line-height: 1;
 }
@@ -77,6 +77,7 @@ p {
   font-size: 18px;
   font-weight: 600;
   border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 .header .header-wrap button:hover {
   cursor: pointer;
@@ -149,7 +150,6 @@ p {
 }
 .section .section_card_wrap .section_card .section_card_text {
   opacity: .6;
-  font-family: "Source Sans Pro", sans-serif;
   font-size: 20px;
   line-height: 1.5;
 }
@@ -166,7 +166,7 @@ p {
   position: absolute;
   z-index: 11;
   bottom: -51%;
-  left: 18%;
+  left: 20%;
 }
 .section_banner .section_banner_text_wrap {
   font-family: "Source Sans Pro", sans-serif;
@@ -192,11 +192,10 @@ p {
   bottom: 4px;
 }
 .section_banner .section_banner_text_wrap .section_banner_text {
-  letter-spacing: 1px;
   margin-bottom: 20px;
   opacity: 0.7;
-  font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 .section_banner button.section_banner_button {
   background-color: #699900;
@@ -206,6 +205,7 @@ p {
   font-size: 18px;
   font-weight: 600;
   border-radius: 3px;
+  font-family: "Source Sans Pro", sans-serif;
   align-self: center;
 }
 .section_banner button.section_banner_button:hover {
@@ -226,11 +226,9 @@ p {
   justify-content: space-between;
 }
 .footer .footer-wrap .footer_text {
-  width: 25%;
-  font-family: "Source Sans Pro", sans-serif;
+  width: 28%;
   font-size: 18px;
 }
 .footer .footer-wrap .footer-cr, .footer .footer-wrap .footer_logo p, .footer .footer-wrap .footer_text {
   opacity: 0.7;
 }
-

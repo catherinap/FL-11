@@ -1,5 +1,11 @@
-@import "_variables1.scss";
+@import "variables1";
 @import "_variables2.scss";
+$map-fonts: (
+        fontFam1: ('Source Sans Pro', sans-serif),
+        fontFam2: ('Hind', sans-serif),
+        fontFam3: ('Fresca', sans-serif)
+);
+
 @mixin lines {
   content: "";
   display: block;
@@ -10,6 +16,7 @@
   z-index: -1;
   height: 16px;
 }
+
 @mixin buttons {
   background-color: $button;
   padding: 22px 55px;
@@ -18,7 +25,7 @@
   font-size: 18px;
   font-weight: 600;
   border-radius: 3px;
-  font-family: $fontFam1;
+  font-family: map_get($map-fonts, fontFam1);
   &:hover {
     cursor: pointer;
     background-color: lighten($button, 8%);
@@ -29,7 +36,8 @@ body {
   margin: 0;
   background-color: $bodyColor;
   color: $textColor;
-  font-family: $fontFam3;
+  font-family: map_get($map-fonts, fontFam1);
+
   * {
     box-sizing: border-box;
   }
@@ -44,13 +52,15 @@ p {
   width: 11%;
   align-items: center;
   justify-content: space-around;
-  font-family: $fontFam3;
+  font-family: map_get($map-fonts, fontFam2);
   font-weight: 700;
   margin-bottom: 70px;
+
   p {
     font-size: 30px;
     text-align: center;
     line-height: 1;
+
     span {
       display: block;
       font-size: 12px;
@@ -65,33 +75,39 @@ p {
   padding-top: 26px;
   border-radius: 0 0 50% 0;
   margin-bottom: 60px;
+
   .landing-logo {
     @extend .logo;
   }
+
   .header-wrap {
     margin: 0 10%;
     width: 1500px;
+
     .header_heading {
       position: relative;
       color: $textColor;
-      font-family: $fontFam1;
+      font-family: map_get($map-fonts, fontFam1);
       font-size: 80px;
       font-weight: bold;
       line-height: 1;
       width: 50%;
       z-index: 1;
+
       &::after {
         @include lines;
         height: 31px;
       }
     }
+
     p.header_text {
-      font-family: $fontFam3;
+      font-family: map_get($map-fonts, fontFam2);
       font-weight: 300;
       font-size: 20px;
       width: 47%;
       margin: 4.3em 0;
     }
+
     button {
       @include buttons;
     }
@@ -103,14 +119,16 @@ p {
   margin: 0 auto;
   text-align: center;
   position: relative;
+
   p.section_text {
     position: relative;
     display: inline-block;
     z-index: 1;
     font-size: 45px;
     font-weight: 600;
-    font-family: $fontFam1;
+    font-family: map_get($map-fonts, fontFam1);
     color: $textColor;
+
     &:before {
       @include lines;
       left: 52.5%;
@@ -124,32 +142,38 @@ p {
     margin: 60px auto 263px;
     display: flex;
     justify-content: space-between;
+
     .section_card {
       width: 32%;
       border-radius: 5px;
       background-color: $backGroundColor;
       padding: 25px;
+
       &:nth-last-child(1) .section_card_heading {
         margin-bottom: 10px;
       }
+
       .section_card_img {
         border-radius: 5px;
         width: 100%;
       }
+
       p.section_card_heading {
         position: relative;
         z-index: 1;
-        font-family: $fontFam2;
+        font-family: map_get($map-fonts, fontFam2);
         font-weight: 700;
         display: inline-block;
         font-size: 27px;
         line-height: 2.5;
+
         span {
           @include lines;
           bottom: 25%;
           width: 100%;
         }
       }
+
       .section_card_text {
         opacity: .6;
         font-size: 20px;
@@ -171,10 +195,12 @@ p {
   position: absolute;
   z-index: 11;
   bottom: -51%;
-  left: 18%;
+  left: 20%;
+
   .section_banner_text_wrap {
-    font-family: $fontFam1;
+    font-family: map_get($map-fonts, fontFam1);
     text-align: left;
+
     .section_banner_heading {
       position: relative;
       z-index: 1;
@@ -182,6 +208,7 @@ p {
       font-weight: 700;
       font-size: 35px;
       margin-bottom: 22px;
+
       &:after {
         @include lines;
         left: 29%;
@@ -189,14 +216,16 @@ p {
         bottom: 4px;
       }
     }
+
     .section_banner_text {
       margin-bottom: 20px;
       opacity: 0.7;
 
       font-size: 20px;
-      font-family: $fontFam3;
+      font-family: map_get($map-fonts, fontFam1);
     }
   }
+
   button.section_banner_button {
     @include buttons;
     align-self: center;
@@ -208,22 +237,27 @@ p {
   background-color: $backGroundColor;
   color: white;
   padding: 11em 0 5em 0;
+
   .footer-wrap {
     width: 1500px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+
     .footer_logo {
       @extend .logo;
+
       p {
         @extend .footer-cr;
       }
     }
+
     .footer_text {
       width: 28%;
       @extend .footer-cr;
       font-size: 18px;
     }
+
     .footer-cr {
       opacity: 0.7;
     }
