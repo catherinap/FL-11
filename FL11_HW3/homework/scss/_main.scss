@@ -1,7 +1,7 @@
 $map-fonts: (
         fontFam1: ('Source Sans Pro', sans-serif),
         fontFam2: ('Hind', sans-serif),
-        fontFam: $font);
+        fontFam: $font
 );
 @mixin lines {
   content: "";
