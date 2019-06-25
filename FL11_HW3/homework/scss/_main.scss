@@ -1,10 +1,8 @@
-@import "_variables1.scss";
-@import "_variables2.scss";
-
 $map-fonts: (
         fontFam1: ('Source Sans Pro', sans-serif),
         fontFam2: ('Hind', sans-serif),
         fontFam: $font);
+);
 @mixin lines {
   content: "";
   display: block;
