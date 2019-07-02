@@ -243,6 +243,12 @@ footer .copyrights, .footer-span {
     padding: 2em 1.5vw;
   }
 }
+@media screen and (max-width: 960px) {
+  .nav_bar a {
+    padding: 3.3em 1.5vw;
+    font-size: 1.7vw;
+  }
+}
 @media screen and (max-width: 768px) {
   .container {
     grid-template-columns: .1fr 4fr 3fr .1fr;
@@ -346,6 +352,16 @@ footer .copyrights, .footer-span {
     grid-column: 2/2;
     grid-row: 3/3;
   }
+  .aside_info {
+    padding: 7vw;
+  }
+  .aside_title {
+    font-size: 5.5vw;
+  }
+  .aside_description {
+    font-size: 3vw;
+    opacity: .8;
+  }
   .article {
     min-height: 40vh;
     flex-direction: column;
@@ -370,19 +386,6 @@ footer .copyrights, .footer-span {
   footer {
     grid-column: 2/3;
     grid-row: 4/4;
-    font-size: 1.4vw;
-  }
-  .aside_info {
-    padding: 7vw;
-  }
-  .aside_title {
-    font-size: 5.5vw;
-  }
-  .aside_description {
-    font-size: 3vw;
-    opacity: .8;
-  }
-  footer {
     font-size: 3.3vw;
     padding: 6vw;
   }
