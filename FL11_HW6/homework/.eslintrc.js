@@ -42,4 +42,4 @@ module.exports = {
 		"no-unused-vars": ["error", { "vars": "local" }],
 		"no-magic-numbers": ["warn", { "ignore": [0, 1] }]
 	}
-}
+};
