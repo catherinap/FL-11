@@ -325,14 +325,12 @@ footer .copyrights, .footer-span {
     font-size: 1.9vw;
   }
 }
-
 @media screen and (max-width: 480px) {
   .container {
     grid-template-areas: ' . header . '
                           ' . main . '
                           ' . aside . '
-                          ' . footer . '
-  ;
+                          ' . footer . ';
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 4fr auto auto 4fr;
   }
