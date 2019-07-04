@@ -113,57 +113,11 @@ main {
   grid-template-columns: repeat(2, 50%);
   grid-gap: 0;
 }
-.hover, .hover1, .hover2, .hover3 {
-  position: relative;
+.hover {
   transition: .5s;
 }
-.hover:hover:before {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #B71757;
+.hover:hover {
   opacity: .5;
-  display: block;
-}
-.hover1:hover:before {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #0D7E71;
-  opacity: .5;
-  display: block;
-}
-.hover2:hover:before {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #b1660e;
-  opacity: .5;
-  display: block;
-}
-.hover3:hover:before {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: #d12767;
-  opacity: .5;
-  display: block;
 }
 .picture {
   height: 100%;
@@ -241,12 +195,6 @@ footer .copyrights, .footer-span {
   }
   .nav_bar a {
     padding: 2em 1.5vw;
-  }
-}
-@media screen and (max-width: 960px) {
-  .nav_bar a {
-    padding: 3.3em 1.5vw;
-    font-size: 1.7vw;
   }
 }
 @media screen and (max-width: 768px) {
@@ -330,7 +278,8 @@ footer .copyrights, .footer-span {
     grid-template-areas: ' . header . '
                           ' . main . '
                           ' . aside . '
-                          ' . footer . ';
+                          ' . footer . '
+  ;
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: 4fr auto auto 4fr;
   }
@@ -349,16 +298,6 @@ footer .copyrights, .footer-span {
     grid-area: aside;
     grid-column: 2/2;
     grid-row: 3/3;
-  }
-  .aside_info {
-    padding: 7vw;
-  }
-  .aside_title {
-    font-size: 5.5vw;
-  }
-  .aside_description {
-    font-size: 3vw;
-    opacity: .8;
   }
   .article {
     min-height: 40vh;
@@ -384,6 +323,19 @@ footer .copyrights, .footer-span {
   footer {
     grid-column: 2/3;
     grid-row: 4/4;
+    font-size: 1.4vw;
+  }
+  .aside_info {
+    padding: 7vw;
+  }
+  .aside_title {
+    font-size: 5.5vw;
+  }
+  .aside_description {
+    font-size: 3vw;
+    opacity: .8;
+  }
+  footer {
     font-size: 3.3vw;
     padding: 6vw;
   }
