@@ -7,6 +7,8 @@ let secondAttempt;
 let addRange = 4;
 let totalPrize = 0;
 let prizeCof = 2;
+let prizeLowStart = prizeLow;
+let rangeStart = 8;
 let ask = confirm('Do you want to play a game?');
 if (ask === false) {
     alert('You did not become a billionaire, but can.');
@@ -37,6 +39,9 @@ if (ask === false) {
             if (prize !== 0) {
                 maxPocket += addRange;
                 prizeLow += prizeLow;
+            } else {
+                maxPocket = rangeStart;
+                prizeLow = prizeLowStart;
             }
             pocket = Math.floor(Math.random() * (maxPocket - minPocket + 1));
             for (let i = 1; i <= numbersOfAttempt; i++) {
