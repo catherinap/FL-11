@@ -5,7 +5,7 @@ function formatTime(num) {
     for (days = 0; hours > 24; days++) {
         hours = hours - 24;
     }
-    let string = days + 'day(s) ' + hours + ' hour(s) ' + minutes + ' minute(s).';
+    let string = `${days} day(s) ${hours} hour(s) ${minutes} minute(s).`;
     return string;
 }
 formatTime(61);
