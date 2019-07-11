@@ -1,11 +1,10 @@
 function addNum(num) {
     return num + 1;
 }
-function pipe() {
-    let param = arguments[0];
+function pipe(argument) {
     for (let i = 1; i < arguments.length; i++) {
-        param = arguments[i](param);
+        argument = arguments[i](argument);
     }
-    return param;
+    return argument;
 }
 pipe(1, addNum, addNum);
