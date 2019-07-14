@@ -121,8 +121,7 @@ let data = [
       'name': 'George',
       'favoriteFruit': 'banana'
     }
-  ]
-  
+  ] 
 function getAmountOfAdultPeople(data) {
     let age = 18;
     let year = 365;
@@ -130,4 +129,4 @@ function getAmountOfAdultPeople(data) {
     Date.parse(person[' birthday '])) / year > age).length; 
     return adultCheck;
 }
-//keys
+//9_keys
