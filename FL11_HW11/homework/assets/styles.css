@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 60%;
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+.width_100 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    display: flex;
+    width: 100%;
+}
+.column {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+h1 {
+    color:#22BED7;
+    text-align: center;
+}
+span {
+    text-transform: uppercase;
+}
+label {
+    width: 100%;
+}
+.message {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #C9D0D5;
+    border-radius: 3px;
+    font-size: 11px;
+    color: #7EC2F6;
+}
+.message::placeholder {
+    color: #666666;
+}
+button {
+    border: none;
+    background: none; 
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+.add {
+   color: #C9D0D5;
+   margin: 0 18px;
+}
+ .icon_size {
+     font-size: 42px;
+ }
+hr {
+    height: 5px;
+    border: none;
+    background-color: #e2f1fd;
+    margin: 25px 0;
+}
+.item_text {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #22BED7;
+    font-size: 20px;
+    font-weight: 600;
+}
+  .edit, .delete {
+      color: #7EC2F6;
+      font-size: 30px;
+      vertical-align: middle;
+      cursor: pointer;
+  }
+  .edit {
+      color: #22BED7;
+  }
+  input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+  }
+  input[type=checkbox], label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  input[type=checkbox] + label:before {
+    content: "";
+    border-radius: 2px;
+    border: 2px solid #C9D0D5;
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  input[type=checkbox]:checked + label:before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 6px;
+    border: solid #7EC2F6;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+    border-radius: 3px;
+  }
+  .list.dragElem {
+    opacity: 0.4;
+  }
+  .buttons {
+      display: flex;
+  }
