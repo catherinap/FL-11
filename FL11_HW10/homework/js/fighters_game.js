@@ -1,38 +1,46 @@
-function Fighter(fighterObj) {
-    fighterObj.hp = 100;
-    fighterObj.win = 0;
-    fighterObj.loss = 0;
-    this.getName = () => fighterObj.name;
-    this.getDamage = () => fighterObj.damage;
-    this.getHealth = () => fighterObj.hp;
-    this.getAgility = () => fighterObj.agility;
-    this.attack = function (enemy) {
-        let maxSuccess = 100;
-        let attackSuccess = maxSuccess - enemy.getAgility();
-        let probability = Math.floor(Math.random() * maxSuccess);
-        if (probability < attackSuccess) {
-            enemy.dealDamage(this.getDamage());
-            console.log(`${this.getName()} make ${this.getDamage()} damage to ${enemy.getName()}`);
-        } else {
-            console.log(`${this.getName()} attack missed`);
+class Fighter {
+    constructor(fighterObj) {
+        fighterObj.hp = 100;
+        fighterObj.win = 0;
+        fighterObj.loss = 0; 
+        this.getWin = () => fighterObj.win;
+        this.getLoss = () => fighterObj.loss;
+        this.getName = () => fighterObj.name;
+        this.getDamage = () => fighterObj.damage;
+        this.getHealth = () => fighterObj.hp;
+        this.getAgility = () => fighterObj.agility;
+        this.attack = function (enemy) {
+            let maxSuccess = 100;
+            let attackSuccess = maxSuccess - enemy.getAgility();
+            let probability = Math.floor(Math.random() * maxSuccess);
+            if (probability < attackSuccess) {
+                enemy.dealDamage(this.getDamage());
+                console.log(`${this.getName()} make ${this.getDamage()} damage to ${enemy.getName()}`);
+            } else {
+                console.log(`${this.getName()} attack missed`);
+            }
+        };
+        this.logCombatHistory = () => {
+            console.log(`Name: ${this.getName()}, Wins: ${this.getWin()}, Losses: ${this.getLoss()}`);
+        };
+        this.heal = function (healPoint) {
+            fighterObj.hp = fighterObj.hp + healPoint;
+            return fighterObj.hp;
+        };
+        this.dealDamage = function (damagePoint) {
+            if (fighterObj.hp < damagePoint) {
+                fighterObj.hp = 0;
+            } else {
+                fighterObj.hp = fighterObj.hp - damagePoint;
+            }
+        };
+        this.addWin = () => {
+            fighterObj.win = this.getWin() + 1;
         }
-    };
-    this.logCombatHistory = () => {
-        console.log(`Name: ${this.getName()}, Wins: ${this.addWin()}, Losses: ${this.addLoss()}`);
-    };
-    this.heal = function (healPoint) {
-        fighterObj.hp = fighterObj.hp + healPoint;
-        return fighterObj.hp;
-    };
-    this.dealDamage = function (damagePoint) {
-        if (fighterObj.hp < damagePoint) {
-            fighterObj.hp = 0;
-        } else {
-            fighterObj.hp = fighterObj.hp - damagePoint;
-        }
-    };
-    this.addWin = () => fighterObj.win++;
-    this.addLoss = () => fighterObj.loss++;
+        this.addLoss = () => {
+            fighterObj.loss = this.getLoss() + 1;
+        };
+    }
 }
 const fighter1 = new Fighter({name: 'Tanos', damage: 40, agility: 10});
 const fighter2 = new Fighter({name: 'Iron-man', damage: 20, agility: 50});
