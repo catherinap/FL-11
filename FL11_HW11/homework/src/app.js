@@ -6,27 +6,31 @@ const addMessage = document.querySelector('.message'),
 
 let todoList = [];
 
-let displayTodo = () => {
-       document.getElementById('item_${i}');
-    let displayMessage = '';
-    todoList.forEach((item, i) => {
-        let checked = item.checked ? 'checked' : '';
-        displayMessage += `
-      <li draggable="true" class="item">
-            <input type="checkbox" class="task_text" id="item_${i}" ${checked}>
-            <label for="item_${i}">${item.todo}</label>
+let refreshTodo = () => {
+    todo.innerHTML='';
+    todoList.forEach((item,index) => {
+        displayActivity(item, index);
+    });
+};
+let displayActivity = (item,index) => {
+       let checked = item.checked ? 'checked' : '';
+       let li = document.createElement('li');
+       li.draggable=true;
+       li.className= 'item';
+        li.innerHTML = `
+            <input type="checkbox" class="task_text" id="item_${index}" ${checked}>
+            <label for="item_${todoList.length}">${item.todo}</label>
             <input type="text" class="edit_mode">
             <button class="edit"><i class="material-icons">edit</i></button>
-            <button class="delete"><i class="material-icons">delete</i></button>
-    </li>`;
-    });
-    todo.innerHTML = displayMessage;
+            <button class="delete"><i class="material-icons">delete</i></button>`;
+            addEvents(li);
+            todo.appendChild(li);
 };
 
 if (localStorage.getItem('todo')) {
     todoList = JSON.parse(localStorage.getItem('todo'));
     localStorage.clear();
-    displayTodo();
+    refreshTodo();
 }
 addButton.addEventListener('click', () => {
     let newTodo = {
@@ -34,9 +38,8 @@ addButton.addEventListener('click', () => {
         checked: false
     };
     todoList.push(newTodo);
-    displayTodo();
+    refreshTodo();
     localStorage.setItem('todo', JSON.stringify(todoList));
-    localStorage.clear();
 });
 todo.addEventListener('change', (event) => {
     let valueLabel = todo.querySelector('[for=' + event.target.id + ']').innerHTML;
@@ -83,4 +86,3 @@ function addEvents(elem) {
     elem.addEventListener('dragover', dragOver);
     elem.addEventListener('drop', drop);
 }
-let cols = document.querySelectorAll('.todo .item');
