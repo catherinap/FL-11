@@ -11,30 +11,26 @@ body {
 }
 .flex {
     display: flex;
+    justify-content: space-between;
 }
-.width_100 {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-li {
-    display: flex;
+label {
     width: 100%;
 }
-.column {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+ul {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+li {
+    margin-bottom: 10px;
+    overflow: hidden;
 }
 h1 {
-    color:#22BED7;
+    color: #22BED7;
     text-align: center;
 }
 span {
     text-transform: uppercase;
-}
-label {
-    width: 100%;
 }
 .message {
     width: 100%;
@@ -49,18 +45,18 @@ label {
 }
 button {
     border: none;
-    background: none; 
+    background: none;
     padding: 0;
     cursor: pointer;
     outline: none;
 }
 .add {
-   color: #C9D0D5;
-   margin: 0 18px;
+    color: #C9D0D5;
+    margin: 0 18px;
 }
- .icon_size {
-     font-size: 42px;
- }
+.icon_size {
+    font-size: 42px;
+}
 hr {
     height: 5px;
     border: none;
@@ -76,49 +72,22 @@ hr {
     font-size: 20px;
     font-weight: 600;
 }
-  .edit, .delete {
-      color: #7EC2F6;
-      font-size: 30px;
-      vertical-align: middle;
-      cursor: pointer;
-  }
-  .edit {
-      color: #22BED7;
-  }
-  input[type=checkbox] {
-    opacity: 0;
-    position: absolute;
-  }
-  input[type=checkbox], label {
-    display: inline-block;
+.edit i, .delete i {
+    color: #7EC2F6;
+    font-size: 30px;
     vertical-align: middle;
     cursor: pointer;
-  }
-  input[type=checkbox] + label:before {
-    content: "";
-    border-radius: 2px;
-    border: 2px solid #C9D0D5;
-    display: inline-block;
-    vertical-align: middle;
-    width: 15px;
-    height: 15px;
-    padding: 2px;
-    margin-right: 10px;
-    text-align: center;
-  }
-  input[type=checkbox]:checked + label:before {
-    content: "";
-    display: inline-block;
-    width: 1px;
-    height: 6px;
-    border: solid #7EC2F6;
-    border-width: 0 4px 4px 0;
-    transform: rotate(45deg);
-    border-radius: 3px;
-  }
-  .list.dragElem {
-    opacity: 0.4;
-  }
-  .buttons {
-      display: flex;
+}
+.edit {
+    color: #22BED7;
+}
+.delete {
+    float: right;
+}
+.edit_mode {
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
   }
