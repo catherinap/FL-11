@@ -1,7 +1,6 @@
 const addMessage = document.querySelector('.message'),
     addButton = document.querySelector('.add'),
     todo = document.querySelector('.todo'),
-    deleteButton = document.querySelector('.delete'),
     editButton = document.querySelector('.edit');
 
 let todoList = [];
@@ -12,6 +11,7 @@ let refreshTodo = () => {
         displayActivity(item, index);
     });
 };
+
 let displayActivity = (item,index) => {
        let checked = item.checked ? 'checked' : '';
        let li = document.createElement('li');
@@ -22,7 +22,7 @@ let displayActivity = (item,index) => {
             <label for="item_${todoList.length}">${item.todo}</label>
             <input type="text" class="edit_mode">
             <button class="edit"><i class="material-icons">edit</i></button>
-            <button class="delete"><i class="material-icons">delete</i></button>`;
+            <button class="delete" onclick='deleteItem(event)'><i class="material-icons">delete</i></button>`;
             addEvents(li);
             todo.appendChild(li);
 };
@@ -51,6 +51,13 @@ todo.addEventListener('change', (event) => {
     });
 });
 
+function deleteItem(event) {
+    console.log('deleted');
+    let listRemove = event.target.parentElement.parentElement;
+    let complete = document.createElement('li');
+    complete.appendChild(listRemove.children[1]);
+    todo.removeChild(listRemove);
+}
 //Drag & Drop
 let dragEl;
 
