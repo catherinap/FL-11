@@ -7,6 +7,7 @@ const addMessage = document.querySelector('.message'),
 let todoList = [];
 
 let displayTodo = () => {
+       document.getElementById('item_${i}');
     let displayMessage = '';
     todoList.forEach((item, i) => {
         let checked = item.checked ? 'checked' : '';
@@ -35,6 +36,7 @@ addButton.addEventListener('click', () => {
     todoList.push(newTodo);
     displayTodo();
     localStorage.setItem('todo', JSON.stringify(todoList));
+    localStorage.clear();
 });
 todo.addEventListener('change', (event) => {
     let valueLabel = todo.querySelector('[for=' + event.target.id + ']').innerHTML;
@@ -82,4 +84,3 @@ function addEvents(elem) {
     elem.addEventListener('drop', drop);
 }
 let cols = document.querySelectorAll('.todo .item');
-[].forEach.call(cols, addEvents);

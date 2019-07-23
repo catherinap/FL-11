@@ -8,20 +8,18 @@
 </head>
 <body>
   <div id="root">
-    <h1><span>todo </span>Cat List</h1>
-    <div class="wrapper flex">
-      <label>
+    <div class="todo_list">
+        <h1><span>todo </span>Cat List</h1>
+      <div class="create_new_todo">
         <input type="text" placeholder="Add new action" class="message">
-      </label>
-      <button class="add">
-        <i class="material-icons icon_size">add_box</i>
-      </button>
-    </div>
-    <div class="wrapper">
-      <hr>
-    </div>
-    <div class="wrapper flex">
-      <ul class="todo"></ul>
+        <button class="add"><i class="material-icons icon_size">add_box</i></button>
+      </div>
+      <div class="wrapper">
+          <hr>
+        </div>
+      <div class="wrapper">
+        <ul class="todo"></ul>
+      </div>
     </div>
   </div>
   <script src="./src/app.js"></script>
